@@ -45,7 +45,7 @@
 	
 	[_bpch_didReceiveMemoryWarningBlock release], _bpch_didReceiveMemoryWarningBlock = nil;
 	
-	[_bpch_preferredStatusBarStyleBlock release], _bpch_preferredStatusBarStyleBlock release = nil;
+	[_bpch_preferredStatusBarStyleBlock release], _bpch_preferredStatusBarStyleBlock = nil;
 	[_bpch_childViewControllerForStatusBarHiddenBlock release], _bpch_childViewControllerForStatusBarHiddenBlock = nil;
 	[_bpch_childViewControllerForStatusBarStyleBlock release], _bpch_childViewControllerForStatusBarStyleBlock = nil;
 	

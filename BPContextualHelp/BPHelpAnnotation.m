@@ -41,13 +41,25 @@
 		}
 		else
 		{
-			for (UIView *subview in bar.subviews)
+            UIView *contentView = nil;
+            
+            for (UIView *view in bar.subviews) {
+                if([NSStringFromClass(view.class) isEqualToString:@"_UINavigationBarContentView"]) {
+                    for (UIView *subview in view.subviews) {
+                        if([NSStringFromClass(subview.class) isEqualToString:@"_UIButtonBarStackView"]) {
+                            contentView = subview;
+                        }
+                    }
+                }
+            }
+            
+			for (UIView *subview in contentView.subviews)
 			{
 				if ([subview isKindOfClass:[UIControl class]])
 				{
 					for (id target in ((UIControl *) subview).allTargets)
 					{
-						if (target == anchorItem)
+                        if (target == anchorItem || [[target barButtonItem] isEqual:anchorItem])
 						{
 							[_anchorView bp_release];
 							_anchorView = [subview bp_retain];
